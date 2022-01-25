@@ -11,7 +11,7 @@ This library is only available for .NET 6.0 or later.
 - Encode / decode string in many formats (CSV, Tab, Textarea, etc) 
 - Language stuff: char.IsVowel/char.IsConsonant, Transliteration, Glyph Mapping, Remove Accents, etc.
 - Number: Literal strings, Roman numbers, Pluralization, etc.
-- Olson Time Zone extensions to TimeZoneInfo
+- Iana Time Zone extensions to TimeZoneInfo
 - Validate: Email, Url, Twitter screenname, Phone Number, Date, Time, etc.
 
 ## NuGet
@@ -190,10 +190,10 @@ The best explanation is the source code :). I've added summary meta-data to most
 
 ----
 ### TimeZoneInfo
-* **ToOlsonTimeZone**: Returns the best match for the Olson Time Zone format.
-* **ToOlsonTimeZones**: Returns all the matches for the Olson Time Zone format.
-* **FromOlsonToTimeZoneId**: Returns the TimeZone Id from Olson Time Zone.
-* **FromOlsonToTimeZoneInfo**: Returns the TimeZoneInfo from Olson Time Zone.
+* **ToIanaTimeZone**: Returns the best match for the Iana Time Zone format.
+* **ToIanaTimeZones**: Returns all the matches for the Iana Time Zone format.
+* **FromIanaToTimeZoneId**: Returns the TimeZone Id from Iana Time Zone.
+* **FromIanaToTimeZoneInfo**: Returns the TimeZoneInfo from Iana Time Zone.
 
 ----
 ### UInt

@@ -9,27 +9,27 @@ namespace CalbucciLib.ExtensionsGalore.Tests
 		[TestMethod()]
 		public void ParseTimeTest()
 		{
-			var tests = new List<Tuple<string, TimeSpan?>>
+			var tests = new List<Tuple<string, TimeOnly?>>
 			{
-				Tuple.Create<string, TimeSpan?>("7a", new TimeSpan(7, 0, 0)),
-				Tuple.Create<string, TimeSpan?>("3pm", new TimeSpan(15, 0, 0)),
-				Tuple.Create<string, TimeSpan?>("1:37", new TimeSpan(1, 37, 0)),
-				Tuple.Create<string, TimeSpan?>("13:28", new TimeSpan(13, 28, 0)),
-				Tuple.Create<string, TimeSpan?>("0:0", new TimeSpan(0, 0, 0)),
-				Tuple.Create<string, TimeSpan?>("2:49:21", new TimeSpan(2, 49, 21)),
-				Tuple.Create<string, TimeSpan?>("15:07:14", new TimeSpan(15, 7, 14)),
-				Tuple.Create<string, TimeSpan?>("2am", new TimeSpan(2, 0, 0)),
-				Tuple.Create<string, TimeSpan?>("1:27 p.m.", new TimeSpan(13, 27, 0)),
-				Tuple.Create<string, TimeSpan?>("2:32:43 PM", new TimeSpan(14, 32, 43)),
+				Tuple.Create<string, TimeOnly?>("7a", new TimeOnly(7, 0, 0)),
+				Tuple.Create<string, TimeOnly?>("3pm", new TimeOnly(15, 0, 0)),
+				Tuple.Create<string, TimeOnly?>("1:37", new TimeOnly(1, 37, 0)),
+				Tuple.Create<string, TimeOnly?>("13:28", new TimeOnly(13, 28, 0)),
+				Tuple.Create<string, TimeOnly?>("0:0", new TimeOnly(0, 0, 0)),
+				Tuple.Create<string, TimeOnly?>("2:49:21", new TimeOnly(2, 49, 21)),
+				Tuple.Create<string, TimeOnly?>("15:07:14", new TimeOnly(15, 7, 14)),
+				Tuple.Create<string, TimeOnly?>("2am", new TimeOnly(2, 0, 0)),
+				Tuple.Create<string, TimeOnly?>("1:27 p.m.", new TimeOnly(13, 27, 0)),
+				Tuple.Create<string, TimeOnly?>("2:32:43 PM", new TimeOnly(14, 32, 43)),
 
 				// Invalid
-				Tuple.Create<string, TimeSpan?>("", null),
-				Tuple.Create<string, TimeSpan?>("-1:32:43 PM", null),
-				Tuple.Create<string, TimeSpan?>("25:32:43 PM", null),
-				Tuple.Create<string, TimeSpan?>("10:61", null),
-				Tuple.Create<string, TimeSpan?>("10:-1", null),
-				Tuple.Create<string, TimeSpan?>("10:01:-27", null),
-				Tuple.Create<string, TimeSpan?>("10:01:93", null),
+				Tuple.Create<string, TimeOnly?>("", null),
+				Tuple.Create<string, TimeOnly?>("-1:32:43 PM", null),
+				Tuple.Create<string, TimeOnly?>("25:32:43 PM", null),
+				Tuple.Create<string, TimeOnly?>("10:61", null),
+				Tuple.Create<string, TimeOnly?>("10:-1", null),
+				Tuple.Create<string, TimeOnly?>("10:01:-27", null),
+				Tuple.Create<string, TimeOnly?>("10:01:93", null),
 			};
 
 			foreach (var test in tests)

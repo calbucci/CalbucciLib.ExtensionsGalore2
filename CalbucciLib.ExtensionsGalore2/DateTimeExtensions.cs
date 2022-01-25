@@ -27,7 +27,7 @@ namespace CalbucciLib.ExtensionsGalore
 		//    Parse
 		//
 		// ==========================================================================
-		public static TimeSpan? ParseTime(string? time)
+		public static TimeOnly? ParseTime(string? time)
 		{
 			if (string.IsNullOrWhiteSpace(time))
 				return null;
@@ -83,7 +83,7 @@ namespace CalbucciLib.ExtensionsGalore
 				}
 			}
 
-			return new TimeSpan(hours, minutes, seconds);
+			return new TimeOnly(hours, minutes, seconds);
 		}
 
 		// ==========================================================================

@@ -11,73 +11,54 @@ namespace CalbucciLib.ExtensionsGalore.Tests
 	[TestClass()]
 	public class TimeZoneInfoExtensionsTests
 	{
-		[ClassInitialize]
-		public static void Init(TestContext context)
-		{
-			// Init the timezone tables
-			var firstTz = TimeZoneInfo.GetSystemTimeZones().FirstOrDefault();
-			Assert.IsNotNull(firstTz);
-			// Init the TimeZoneExtensions
-			_ = firstTz.ToOlsonTimeZone();
-		}
-
+	
 		[TestMethod()]
-		public void ToOlsonTimeZoneTest()
+		public void ToIanaTimeZoneTest()
 		{
-			foreach (var tzi in TimeZoneInfo.GetSystemTimeZones())
-			{
-				var olson = tzi.ToOlsonTimeZone();
-				Assert.IsNotNull(olson, "{0} {1}", tzi.Id, tzi.BaseUtcOffset);
-			}
-
 			string[] tests = new[]
 			{
-				"Alaskan Standard Time", "US/Alaska",
-				"Pacific Standard Time", "US/Pacific"
+				"Alaskan Standard Time", "America/Anchorage",
+				"Pacific Standard Time", "America/Los_Angeles",
+				"America/Los_Angeles", "America/Los_Angeles",
+				"Etc/GMT+8", "Etc/GMT+8",
+				"UTC-08", "Etc/GMT+8"
 			};
 
 			for (int i = 0; i < tests.Length; i+=2)
 			{
 				var expected = tests[i + 1];
 				TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(tests[i]);
-				var actual = tzi.ToOlsonTimeZone();
+				var actual = tzi.ToIanaId();
 				Assert.AreEqual(expected, actual);
 			}
+			foreach (var tzi in TimeZoneInfo.GetSystemTimeZones())
+			{
+				var iana = tzi.ToIanaId();
+				Assert.IsNotNull(iana, "{0} {1}", tzi.Id, tzi.BaseUtcOffset);
+			}
+
 		}
 
 		[TestMethod()]
-		public void FromOlsonToTimeZoneIdTest()
+		public void ToWindowsIdTest()
 		{
-			string?[] tests = new[]
+			string[] tests = new[]
 			{
 				"US/Alaska", "Alaskan Standard Time",
 				"US/Pacific", "Pacific Standard Time",
+				"Pacific Standard Time", "Pacific Standard Time",
+				"Etc/GMT+8", "UTC-08",
+				"UTC-08", "UTC-08"
 			};
 
 			for (int i = 0; i < tests.Length; i += 2)
 			{
 				var expected = tests[i + 1];
-				var actual = TimeZoneInfoExtensions.FromOlsonToTimeZoneId(tests[i]);
+				TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(tests[i]);
+				var actual = tzi.ToWindowsId();
 				Assert.AreEqual(expected, actual);
 			}
 		}
 
-		[TestMethod()]
-		public void FromOlsonToTimeZoneInfoTest()
-		{
-			string?[] tests = new[]
-			{
-				"US/Alaska", "Alaskan Standard Time",
-				"US/Pacific", "Pacific Standard Time",
-			};
-
-			for (int i = 0; i < tests.Length; i += 2)
-			{
-				var expected = tests[i + 1];
-				var tzi = TimeZoneInfoExtensions.FromOlsonToTimeZoneInfo(tests[i]);
-				Assert.IsNotNull(tzi);
-				Assert.AreEqual(expected, tzi.Id);
-			}
-		}
 	}
 }
