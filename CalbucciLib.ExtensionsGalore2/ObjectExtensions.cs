@@ -55,7 +55,7 @@ namespace CalbucciLib.ExtensionsGalore
                 }
             }
 
-            // String
+            // string
             var stringObj = obj as string;
             if (stringObj != null)
             {

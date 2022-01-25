@@ -134,7 +134,7 @@ The best explanation is the source code :). I've added summary meta-data to most
 * **CountBits**: Returns the number of bits.
 
 ----
-### String
+### string
 * **GenerateLoremIpsum**: Generate N words of lorem-ipsum.
 * **CreateTRTD**: Converts an array of strings into a TR-TD HTML line
 * **HtmlEncode**: Encode a string to be HTML-safe.
@@ -144,7 +144,7 @@ The best explanation is the source code :). I've added summary meta-data to most
 #### Escape / Unescape: 
  * **EscapeCString/UnescapeCString**: Make a string into a literal string to be represented in C/C++/C#/Java(?)
  * **EscapeJson**: Escape a string to be used inside a JSON string.
- * **EscapeStringFormat**: Escape a string to be used in .NET String.Format.
+ * **EscapeStringFormat**: Escape a string to be used in .NET string.Format.
  * **EscapeCSV**: Escape a string to be used as a CSV field.
  * **EscapeCDATA**:  Escape a string to be used in an XML CDATA section.
  * **EscapeTabDelimited**: Escape a string to be used as a field in a Tab-delimited file.

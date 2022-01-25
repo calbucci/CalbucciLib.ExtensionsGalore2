@@ -517,7 +517,7 @@ namespace CalbucciLib.ExtensionsGalore
 
         public static bool IsValidUSPhoneNumber(string? phoneNumber, bool withAreaCode = true)
         {
-            if (String.IsNullOrWhiteSpace(phoneNumber))
+            if (string.IsNullOrWhiteSpace(phoneNumber))
                 return false;
 
             if (phoneNumber.Length < 7)

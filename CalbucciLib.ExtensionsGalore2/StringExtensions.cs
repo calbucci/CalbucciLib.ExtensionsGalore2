@@ -109,7 +109,7 @@ namespace CalbucciLib.ExtensionsGalore
         //    HTML & URL Encoding
         //
         // ==========================================================================
-        public static string HtmlEncode(this String? str)
+        public static string HtmlEncode(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
@@ -120,20 +120,20 @@ namespace CalbucciLib.ExtensionsGalore
         /// <summary>
         /// Encodes a string to be HTML safe to be used inside a Textarea. Same thing as HtmlEncode, except that NL and CR are not encoded.
         /// </summary>
-        public static string HtmlEncodeTextarea(this String? str)
+        public static string HtmlEncodeTextarea(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
 
             return EscapeCharacters(str, "<>&",
                 new[] { "&lt;", "&gt;", "&amp;" }, false)
-                ?? String.Empty;
+                ?? string.Empty;
         }
 
         /// <summary>
         /// Encodes a string to be HTML safe to be used inside a PRE element.
         /// </summary>
-	    public static string HtmlEncodePre(this String? str)
+	    public static string HtmlEncodePre(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
@@ -141,17 +141,17 @@ namespace CalbucciLib.ExtensionsGalore
             return EscapeCharacters(str,
                 "<>&\"\n\r\t",
                 new[] { "&lt;", "&gt;", "&amp;", "&quot;", "<br>", "", "&nbsp;&nbsp;&nbsp;&nbsp;" }, false)
-                ?? String.Empty;
+                ?? string.Empty;
         }
 
-        public static string HtmlDecode(this String? str)
+        public static string HtmlDecode(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
             return HttpUtility.HtmlDecode(str);
         }
 
-        public static string UrlEncode(this String? str)
+        public static string UrlEncode(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
@@ -159,7 +159,7 @@ namespace CalbucciLib.ExtensionsGalore
             return HttpUtility.UrlEncode(str);
         }
 
-        public static string UrlDecode(this String? str)
+        public static string UrlDecode(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return "";
@@ -174,7 +174,7 @@ namespace CalbucciLib.ExtensionsGalore
 
             var buildLink = (string link, string text) =>
             {
-                if (!String.IsNullOrWhiteSpace(DefaultHtmlifyLinkAttributes))
+                if (!string.IsNullOrWhiteSpace(DefaultHtmlifyLinkAttributes))
                     return $"<a href=\"{link}\" {DefaultHtmlifyLinkAttributes}>{text}</a>";
                 return $"<a href=\"{link}\">{text}</a>";
             };
@@ -225,7 +225,7 @@ namespace CalbucciLib.ExtensionsGalore
             return null;
         }
 
-        public static string Htmlify(this String? str, Func<string, string?>? tokenHtmlifier = null)
+        public static string Htmlify(this string? str, Func<string, string?>? tokenHtmlifier = null)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return "";
@@ -272,7 +272,7 @@ namespace CalbucciLib.ExtensionsGalore
         //
         // ==========================================================================
         [return: NotNullIfNotNull("str")]
-        public static string? EscapeCString(this String? str)
+        public static string? EscapeCString(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -284,7 +284,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? UnescapeCString(this String? str)
+        public static string? UnescapeCString(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return str;
@@ -392,7 +392,7 @@ namespace CalbucciLib.ExtensionsGalore
         /// <summary>
         /// Escape a string to be used as a literal string in JSON or JavaScript
         /// </summary>
-        public static string EscapeJson(this String? str, char quoteCharacter = '\"')
+        public static string EscapeJson(this string? str, char quoteCharacter = '\"')
         {
             if (str == null)
                 return "null";
@@ -428,7 +428,7 @@ namespace CalbucciLib.ExtensionsGalore
 
 
         [return: NotNullIfNotNull("str")]
-        public static string? EscapeStringFormat(this String? str)
+        public static string? EscapeStringFormat(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return str;
@@ -437,7 +437,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? EscapeCSV(this String? str, bool escapeControlCharacters = false)
+        public static string? EscapeCSV(this string? str, bool escapeControlCharacters = false)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -513,19 +513,19 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? UnescapeCSVField(this String? str, bool trimWhitespace = true)
+        public static string? UnescapeCSVField(this string? str, bool trimWhitespace = true)
         {
             return UnescapeQuoted(str, trimWhitespace);
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? UnescapeTabField(this String? str, bool trimWhitespace = true)
+        public static string? UnescapeTabField(this string? str, bool trimWhitespace = true)
         {
             return UnescapeQuoted(str, trimWhitespace);
         }
 
         [return: NotNullIfNotNull("str")]
-        private static string? UnescapeQuoted(String? str, bool trimWhitespace)
+        private static string? UnescapeQuoted(string? str, bool trimWhitespace)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -597,7 +597,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? EscapeTabDelimited(this String? str, bool escapeControlCharacters = false)
+        public static string? EscapeTabDelimited(this string? str, bool escapeControlCharacters = false)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -664,7 +664,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? EscapeCDATA(this String? str)
+        public static string? EscapeCDATA(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return str;
@@ -688,17 +688,17 @@ namespace CalbucciLib.ExtensionsGalore
         //   Has*** / Contains*** / IndexOf*** / Ends*** / Starts***
         //
         // ==========================================================================
-        public static bool HasLowerCase(this String? str)
+        public static bool HasLowerCase(this string? str)
         {
             return str != null && str.Any(char.IsLower);
         }
 
-        public static bool HasUpperCase(this String? str)
+        public static bool HasUpperCase(this string? str)
         {
             return str != null && str.Any(char.IsUpper);
         }
 
-        public static bool EqualsAny(this String? str, IList<string?>? matchList,
+        public static bool EqualsAny(this string? str, IList<string?>? matchList,
             StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Count == 0)
@@ -707,12 +707,12 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.Equals(m, stringComparison));
         }
 
-        public static bool EqualsAny(this String? str, params string?[]? matchList)
+        public static bool EqualsAny(this string? str, params string?[]? matchList)
         {
             return EqualsAny(str, matchList, StringComparison.InvariantCultureIgnoreCase);
         }
 
-        public static bool ContainsAny(this String? str, IList<string?>? matchList,
+        public static bool ContainsAny(this string? str, IList<string?>? matchList,
             StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Count == 0)
@@ -721,12 +721,12 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.IndexOf(m, stringComparison) >= 0);
         }
 
-        public static bool ContainsAny(this String? str, params string?[]? matchList)
+        public static bool ContainsAny(this string? str, params string?[]? matchList)
         {
             return ContainsAny(str, matchList, StringComparison.InvariantCultureIgnoreCase);
         }
 
-        public static bool ContainsAny(this String? str, char[]? chars)
+        public static bool ContainsAny(this string? str, char[]? chars)
         {
             if (chars == null || chars.Length == 0 || string.IsNullOrEmpty(str))
                 return false;
@@ -734,7 +734,7 @@ namespace CalbucciLib.ExtensionsGalore
             return str.IndexOfAny(chars) >= 0;
         }
 
-        public static bool StartsWithAny(this String? str, IList<string?>? matchList,
+        public static bool StartsWithAny(this string? str, IList<string?>? matchList,
             StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Count == 0)
@@ -743,7 +743,7 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.StartsWith(m, stringComparison));
         }
 
-        public static bool StartsWithAny(this String? str, params string?[]? matchList)
+        public static bool StartsWithAny(this string? str, params string?[]? matchList)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Length == 0)
                 return false;
@@ -751,7 +751,7 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.StartsWith(m, StringComparison.CurrentCulture));
         }
 
-        public static bool StartsWithAnyIgnoreCase(this String? str, params string?[]? matchList)
+        public static bool StartsWithAnyIgnoreCase(this string? str, params string?[]? matchList)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Length == 0)
                 return false;
@@ -759,7 +759,7 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.StartsWith(m, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public static bool StartsWithAny(this String? str, char[]? chars)
+        public static bool StartsWithAny(this string? str, char[]? chars)
         {
             if (string.IsNullOrEmpty(str) || chars == null || chars.Length == 0)
                 return false;
@@ -767,7 +767,7 @@ namespace CalbucciLib.ExtensionsGalore
             return chars.Any(c => str[0] == c);
         }
 
-        public static int IndexOfAny(this String? str, IList<string?>? matchList, int start = 0, int count = int.MaxValue,
+        public static int IndexOfAny(this string? str, IList<string?>? matchList, int start = 0, int count = int.MaxValue,
             StringComparison stringComparsion = StringComparison.InvariantCultureIgnoreCase)
         {
             if (matchList == null || matchList.Count == 0)
@@ -811,7 +811,7 @@ namespace CalbucciLib.ExtensionsGalore
             return -1;
         }
 
-        public static bool EndsWithAny(this String? str, IList<string?>? matchList,
+        public static bool EndsWithAny(this string? str, IList<string?>? matchList,
             StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Count == 0)
@@ -821,7 +821,7 @@ namespace CalbucciLib.ExtensionsGalore
 
         }
 
-        public static bool EndsWithAny(this String? str, bool ignoreCase = true, params string?[]? matchList)
+        public static bool EndsWithAny(this string? str, bool ignoreCase = true, params string?[]? matchList)
         {
             if (string.IsNullOrEmpty(str) || matchList == null || matchList.Length == 0)
                 return false;
@@ -833,7 +833,7 @@ namespace CalbucciLib.ExtensionsGalore
             return matchList.Any(m => !string.IsNullOrEmpty(m) && str.EndsWith(m, stringComparison));
         }
 
-        public static bool EndsWithAny(this String? str, char[]? chars)
+        public static bool EndsWithAny(this string? str, char[]? chars)
         {
             if (string.IsNullOrEmpty(str) || chars == null || chars.Length == 0)
                 return false;
@@ -844,7 +844,7 @@ namespace CalbucciLib.ExtensionsGalore
         /// <summary>
         /// Compare two strings ignoring all whitespace ("A dog" = "Adog" = " A  dog ").
         /// </summary>
-        public static bool CompareNonWhitespace(this String? str, string? str2, bool ignoreCase = true)
+        public static bool CompareNonWhitespace(this string? str, string? str2, bool ignoreCase = true)
         {
             if (string.IsNullOrWhiteSpace(str))
             {
@@ -901,7 +901,7 @@ namespace CalbucciLib.ExtensionsGalore
         //   IndexOf
         //
         // ==========================================================================
-        public static int IndexOf(this String? str, Func<char, bool> expresssion, int start = 0, int count = int.MaxValue)
+        public static int IndexOf(this string? str, Func<char, bool> expresssion, int start = 0, int count = int.MaxValue)
         {
             if (string.IsNullOrEmpty(str) || start >= str.Length)
                 return -1;
@@ -925,7 +925,7 @@ namespace CalbucciLib.ExtensionsGalore
             return -1;
         }
 
-        public static int LastIndexOf(this String? str, Func<char, bool> expression, int start = int.MaxValue, int count = int.MaxValue)
+        public static int LastIndexOf(this string? str, Func<char, bool> expression, int start = int.MaxValue, int count = int.MaxValue)
         {
             if (string.IsNullOrEmpty(str))
                 return -1;
@@ -945,43 +945,43 @@ namespace CalbucciLib.ExtensionsGalore
             return -1;
         }
 
-        public static int IndexOfWhitespace(this String? str, int start = 0, int count = int.MaxValue)
+        public static int IndexOfWhitespace(this string? str, int start = 0, int count = int.MaxValue)
         {
             return str.IndexOf(c => char.IsWhiteSpace(c) || char.IsControl(c), start, count);
         }
 
-        public static int IndexOfNonWhitespace(this String? str, int start = 0, int count = int.MaxValue)
+        public static int IndexOfNonWhitespace(this string? str, int start = 0, int count = int.MaxValue)
         {
             return str.IndexOf(c => !char.IsWhiteSpace(c) && !char.IsControl(c), start, count);
         }
 
-        public static int IndexOfLetterOrDigit(this String? str, int start = 0, int count = int.MaxValue)
+        public static int IndexOfLetterOrDigit(this string? str, int start = 0, int count = int.MaxValue)
         {
             return str.IndexOf(char.IsLetterOrDigit, start, count);
         }
 
-        public static int IndexOfNonLetterOrDigit(this String? str, int start = 0, int count = int.MaxValue)
+        public static int IndexOfNonLetterOrDigit(this string? str, int start = 0, int count = int.MaxValue)
         {
             return str.IndexOf(c => !char.IsLetterOrDigit(c), start, count);
         }
 
-        public static int LastIndexOfWhitespace(this String? str, int start = int.MaxValue, int count = int.MaxValue)
+        public static int LastIndexOfWhitespace(this string? str, int start = int.MaxValue, int count = int.MaxValue)
         {
             return str.LastIndexOf(c => char.IsWhiteSpace(c) || char.IsControl(c), start, count);
         }
 
 
-        public static int LastIndexOfNonWhitespace(this String? str, int start = int.MaxValue, int count = int.MaxValue)
+        public static int LastIndexOfNonWhitespace(this string? str, int start = int.MaxValue, int count = int.MaxValue)
         {
             return str.LastIndexOf(c => !char.IsWhiteSpace(c) && !char.IsControl(c), start, count);
         }
 
-        public static int LastIndexOfLetterOrDigit(this String? str, int start = int.MaxValue, int count = int.MaxValue)
+        public static int LastIndexOfLetterOrDigit(this string? str, int start = int.MaxValue, int count = int.MaxValue)
         {
             return str.LastIndexOf(char.IsLetterOrDigit, start, count);
         }
 
-        public static int LastIndexOfNonLetterOrDigit(this String? str, int start = int.MaxValue, int count = int.MaxValue)
+        public static int LastIndexOfNonLetterOrDigit(this string? str, int start = int.MaxValue, int count = int.MaxValue)
         {
             return str.LastIndexOf(c => !char.IsLetterOrDigit(c), start, count);
         }
@@ -993,7 +993,7 @@ namespace CalbucciLib.ExtensionsGalore
         //
         // ==========================================================================
         [return: NotNullIfNotNull("str")]
-        public static string? TrimStart(this String? str, Func<char, bool> expression)
+        public static string? TrimStart(this string? str, Func<char, bool> expression)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1017,7 +1017,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? TrimEnd(this String? str, Func<char, bool> expression)
+        public static string? TrimEnd(this string? str, Func<char, bool> expression)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1040,7 +1040,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? Trim(this String? str, Func<char, bool> expression)
+        public static string? Trim(this string? str, Func<char, bool> expression)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1072,7 +1072,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? Truncate(this String? str, int maxLength)
+        public static string? Truncate(this string? str, int maxLength)
         {
             if (str == null || str.Length <= maxLength)
                 return str;
@@ -1081,7 +1081,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? TruncateEllipsis(this String? str, int maxLength)
+        public static string? TruncateEllipsis(this string? str, int maxLength)
         {
             if (str == null || str.Length <= maxLength)
                 return str;
@@ -1096,7 +1096,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? TruncatePhrase(this String? str, int maxLength, int maxLengthLastWord = 20)
+        public static string? TruncatePhrase(this string? str, int maxLength, int maxLengthLastWord = 20)
         {
             if (str == null || str.Length <= maxLength)
                 return str;
@@ -1120,7 +1120,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? TruncateTrimLink(this String? link, int maxLength)
+        public static string? TruncateTrimLink(this string? link, int maxLength)
         {
             if (link == null)
                 return null;
@@ -1219,7 +1219,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? TrimLower(this String? str)
+        public static string? TrimLower(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return "";
@@ -1237,7 +1237,7 @@ namespace CalbucciLib.ExtensionsGalore
         /// Remove the accents (diacritics) from the text
         /// </summary>
         [return: NotNullIfNotNull("str")]
-        public static string? RemoveAccents(this String? str)
+        public static string? RemoveAccents(this string? str)
         {
             // Originally from http://stackoverflow.com/a/249126/603637
             if (string.IsNullOrWhiteSpace(str))
@@ -1301,25 +1301,25 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? Transliterate(this String? str)
+        public static string? Transliterate(this string? str)
         {
             return RemapCharacters(str, ch => ch.Transliterate());
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? GlyphMapAndTransliterate(this String? str)
+        public static string? GlyphMapAndTransliterate(this string? str)
         {
             return RemapCharacters(str, ch => ch.GlyphMapAndTransliterate());
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? GlyphMap(this String? str)
+        public static string? GlyphMap(this string? str)
         {
             return RemapCharacters(str, ch => ch.GlyphMap());
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? CapitalizeFirstWord(this String? str)
+        public static string? CapitalizeFirstWord(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1344,7 +1344,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static string? CapitalizeAllWords(this String? str)
+        public static string? CapitalizeAllWords(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1372,7 +1372,7 @@ namespace CalbucciLib.ExtensionsGalore
         /// Remove leading and trailing whitespaces, and convert all whitespaces (sequences) into a single space character
         /// </summary>
         [return: NotNullIfNotNull("str")]
-        public static string? TrimInBetween(this String? str)
+        public static string? TrimInBetween(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1425,7 +1425,7 @@ namespace CalbucciLib.ExtensionsGalore
         /// <summary>
         /// Returns the first word of the sentence (by English standards)
         /// </summary>
-        public static string? GetFirstWord(this String? str)
+        public static string? GetFirstWord(this string? str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -1463,14 +1463,14 @@ namespace CalbucciLib.ExtensionsGalore
         /// Returns the last word in the string
         /// </summary>
         [return: NotNullIfNotNull("str")]
-        public static string? GetLastWord(this String? str)
+        public static string? GetLastWord(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return str;
 
             var wordEnd = str.LastIndexOfLetterOrDigit();
             if (wordEnd == -1)
-                return String.Empty;
+                return string.Empty;
 
             if (wordEnd == 0)
                 return str;
@@ -1494,7 +1494,7 @@ namespace CalbucciLib.ExtensionsGalore
             } while (true);
         }
 
-        //public static List<string> TokenizeEnglish(this String? str)
+        //public static List<string> TokenizeEnglish(this string? str)
         //{
         //	throw new NotImplementedException();
         //}
@@ -1546,7 +1546,7 @@ namespace CalbucciLib.ExtensionsGalore
             }
 
             if (sb.Length == 0)
-                return String.Empty;
+                return string.Empty;
 
             return sb.ToString();
         }
@@ -1557,7 +1557,7 @@ namespace CalbucciLib.ExtensionsGalore
         //   To Other Types
         //
         // ==========================================================================
-        public static bool ToBool(this String? str)
+        public static bool ToBool(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return false;
@@ -1603,13 +1603,13 @@ namespace CalbucciLib.ExtensionsGalore
         /// <summary>
         /// Converts a named color or a hex color ('#fcfcde') to a Color structure
         /// </summary>
-        public static Color? ToColor(this String? str)
+        public static Color? ToColor(this string? str)
         {
             return ColorExtensions.ToColor(str);
         }
 
         [return: NotNullIfNotNull("str")]
-        public static byte[]? ToBytesFromBase64(this String? str)
+        public static byte[]? ToBytesFromBase64(this string? str)
         {
             if (str == null)
                 return null;
@@ -1617,14 +1617,14 @@ namespace CalbucciLib.ExtensionsGalore
             return Convert.FromBase64String(str);
         }
 
-        public static byte[]? ToBytesFromBase62(this String? str)
+        public static byte[]? ToBytesFromBase62(this string? str)
         {
             if (str == null)
                 return null;
             return ByteArrayExtensions.FromBase62(str);
         }
 
-        public static byte[]? ToBytesFromHex(this String? str)
+        public static byte[]? ToBytesFromHex(this string? str)
         {
             if (str == null)
                 return null;
@@ -1632,7 +1632,7 @@ namespace CalbucciLib.ExtensionsGalore
             return ByteArrayExtensions.FromHexEncoding(str);
         }
 
-        public static int ToInt(this String? str)
+        public static int ToInt(this string? str)
         {
             var l = str.ToLong();
             if (l > int.MaxValue || l < int.MinValue)
@@ -1640,7 +1640,7 @@ namespace CalbucciLib.ExtensionsGalore
             return (int)l;
         }
 
-        public static long ToLong(this String? str)
+        public static long ToLong(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return 0;
@@ -1710,7 +1710,7 @@ namespace CalbucciLib.ExtensionsGalore
             return l;
         }
 
-        public static double ToDouble(this String? str)
+        public static double ToDouble(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return 0.0;
@@ -1785,7 +1785,7 @@ namespace CalbucciLib.ExtensionsGalore
             return 0;
         }
 
-        public static float ToFloat(this String? str)
+        public static float ToFloat(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return (float)0.0;
@@ -1859,7 +1859,7 @@ namespace CalbucciLib.ExtensionsGalore
             return 0;
         }
 
-        public static decimal ToDecimal(this String? str)
+        public static decimal ToDecimal(this string? str)
         {
             if (string.IsNullOrWhiteSpace(str))
                 return (decimal)0;
@@ -1948,7 +1948,7 @@ namespace CalbucciLib.ExtensionsGalore
         }
 
         [return: NotNullIfNotNull("str")]
-        public static List<string?>? ToListFromCsvLine(this String? str)
+        public static List<string?>? ToListFromCsvLine(this string? str)
         {
             return ToListFromDelimiterLine(str, ',', '\0',
                 s => UnescapeCSVField(s != null ? s.Trim() : ""));
@@ -1957,7 +1957,7 @@ namespace CalbucciLib.ExtensionsGalore
 
 
         [return: NotNullIfNotNull("str")]
-        public static List<string?>? ToListFromTabDelimitedLine(this String? str, bool trimWhitespaces = false)
+        public static List<string?>? ToListFromTabDelimitedLine(this string? str, bool trimWhitespaces = false)
         {
             //if (string.IsNullOrWhiteSpace(str))
             //	return null;
@@ -1969,7 +1969,7 @@ namespace CalbucciLib.ExtensionsGalore
 
 
         [return: NotNullIfNotNull("str")]
-        private static List<string?>? ToListFromDelimiterLine(String? str, char delimiter,
+        private static List<string?>? ToListFromDelimiterLine(string? str, char delimiter,
             char unescapedSlashDelim, Func<string?, string?> unescapeFunc)
         {
             if (string.IsNullOrEmpty(str))
