@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/calbucci/CalbucciLib.ExtensionsGalore2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/calbucci/CalbucciLib.ExtensionsGalore2</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageLicenseFile>..\license.txt</PackageLicenseFile>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
@@ -19,6 +19,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+	  <None Include="..\license.txt">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+	  </None>
   </ItemGroup>
 
 </Project>

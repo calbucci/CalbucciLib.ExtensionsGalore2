@@ -22,12 +22,14 @@ namespace CalbucciLib.ExtensionsGalore.Tests
             foreach (var test in tests)
             {
                 var copy = test.DeepCopy();
+                if (test == null && copy == null)
+                    continue;
 
                 Assert.AreEqual(test, copy, test != null ? test.ToString() : "null");
 
                 if (test != null)
                 {
-                    Assert.AreEqual(test.GetType(), copy.GetType());
+                    Assert.AreEqual(test.GetType(), copy!.GetType());
                     if (test.GetType() != typeof(string))
                         Assert.AreNotSame(test, copy, test.ToString());
                 }

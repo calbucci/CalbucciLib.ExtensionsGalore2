@@ -343,6 +343,10 @@ namespace CalbucciLib.ExtensionsGalore
                 "Pacific/Tahiti",
                 "Etc/GMT+10",
             },
+                ["Aleutian Standard Time"] = new []
+                {
+                    "US/Hawaii",
+                },
                 ["India Standard Time"] = new[]
             {
                 "Asia/Calcutta",
