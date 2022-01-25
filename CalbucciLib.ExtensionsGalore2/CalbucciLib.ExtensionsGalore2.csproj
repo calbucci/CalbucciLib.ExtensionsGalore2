@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Marcelo Calbucci</Authors>
+    <Product>Extensions Galore</Product>
+    <Description>Utilities to extend the base types of .NET to improve coding speed and readability.</Description>
+    <PackageProjectUrl>https://github.com/calbucci/CalbucciLib.ExtensionsGalore2</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/calbucci/CalbucciLib.ExtensionsGalore2</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseFile>..\license.txt</PackageLicenseFile>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
