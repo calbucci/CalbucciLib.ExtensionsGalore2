@@ -126,6 +126,10 @@ namespace CalbucciLib.ExtensionsGalore
                 "Etc/GMT+6",
                 "Pacific/Galapagos",
             },
+                ["Easter Island Standard Time"] = new[]
+                {
+                    "Chile/EasterIsland"
+                },
                 ["Central Asia Standard Time"] = new[]
             {
                 "Asia/Almaty",
@@ -235,6 +239,10 @@ namespace CalbucciLib.ExtensionsGalore
             {
                 "America/Sao_Paulo",
             },
+                ["Tocantins Standard Time"] = new[]
+                {
+                    "America/Araguaina"
+                },
                 ["Eastern Standard Time"] = new[]
             {
                 "US/Eastern",
@@ -334,6 +342,10 @@ namespace CalbucciLib.ExtensionsGalore
                 "Europe/Athens",
                 "Europe/Chisinau",
             },
+                ["Marquesas Standard Time"] = new[]
+                {
+                    "Pacific/Marquesas"
+                },
                 ["Hawaiian Standard Time"] = new[]
             {
                 "US/Hawaii",
@@ -343,7 +355,7 @@ namespace CalbucciLib.ExtensionsGalore
                 "Pacific/Tahiti",
                 "Etc/GMT+10",
             },
-                ["Aleutian Standard Time"] = new []
+                ["Aleutian Standard Time"] = new[]
                 {
                     "US/Hawaii",
                 },
@@ -476,6 +488,10 @@ namespace CalbucciLib.ExtensionsGalore
                 "Pacific/Pitcairn",
                 "PST8PDT",
             },
+                ["Yukon Standard Time"] = new[]
+                {
+                    "Canada/Yukon"
+                },
                 ["Pacific Standard Time (Mexico)"] = new[]
             {
                 "America/Santa_Isabel",
@@ -528,6 +544,18 @@ namespace CalbucciLib.ExtensionsGalore
                 "America/Port-au-Prince",
                 "Etc/GMT+5",
             },
+                ["Haiti Standard Time"] = new[]
+                {
+                    "America/Port-au-Prince" 
+                },
+                ["Cuba Standard Time"] = new[]
+                {
+                    "America/Havana"
+                },
+                ["Turks And Caicos Standard Time"] = new[]
+                {
+                    "Etc/GMT-6"
+                },
                 ["SA Western Standard Time"] = new[]
             {
                 "America/Puerto_Rico",
@@ -662,35 +690,10 @@ namespace CalbucciLib.ExtensionsGalore
                 "US/Arizona",
                 "Etc/GMT+7",
             },
-                ["UTC"] = new[]
-            {
-                "America/Danmarkshavn",
-                "Etc/GMT",
-            },
-                ["UTC+12"] = new[]
-            {
-                "Pacific/Tarawa",
-                "Pacific/Funafuti",
-                "Pacific/Kwajalein",
-                "Pacific/Majuro",
-                "Pacific/Nauru",
-                "Pacific/Wake",
-                "Pacific/Wallis",
-                "Etc/GMT-12",
-            },
-                ["UTC-02"] = new[]
-            {
-                "America/Noronha",
-                "Atlantic/South_Georgia",
-                "Etc/GMT+2",
-            },
-                ["UTC-11"] = new[]
-            {
-                "Pacific/Pago_Pago",
-                "Pacific/Midway",
-                "Pacific/Niue",
-                "Etc/GMT+11",
-            },
+                ["Gambier Time"] = new[]
+                {
+                    "Pacific/Gambier"
+                },
                 ["Venezuela Standard Time"] = new[]
             {
                 "America/Caracas",
@@ -768,7 +771,45 @@ namespace CalbucciLib.ExtensionsGalore
                 ["Yakutsk Standard Time"] = new[]
             {
                 "Asia/Yakutsk",
-            }
+            },
+                ["UTC"] = new[]
+            {
+                "America/Danmarkshavn",
+                "Etc/GMT",
+            },
+                ["UTC+12"] = new[]
+            {
+                "Pacific/Tarawa",
+                "Pacific/Funafuti",
+                "Pacific/Kwajalein",
+                "Pacific/Majuro",
+                "Pacific/Nauru",
+                "Pacific/Wake",
+                "Pacific/Wallis",
+                "Etc/GMT-12",
+            },
+                ["UTC-02"] = new[]
+            {
+                "America/Noronha",
+                "Atlantic/South_Georgia",
+                "Etc/GMT+2",
+            },
+                ["UTC-08"] = new[]
+                {
+                    "Etc/GMT-8"
+                },
+                ["UTC-09"] = new[]
+                {
+                    "Etc/GMT-9"
+                },
+                ["UTC-11"] = new[]
+            {
+                "Pacific/Pago_Pago",
+                "Pacific/Midway",
+                "Pacific/Niue",
+                "Etc/GMT+11",
+            },
+
             };
 
             _olsonToWindows = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
