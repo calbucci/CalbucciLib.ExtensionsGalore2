@@ -8,10 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalbucciLib.ExtensionsGalore2.Tests", "CalbucciLib.ExtensionsGalore2.Tests\CalbucciLib.ExtensionsGalore2.Tests.csproj", "{6DF6CF78-BA0A-4310-A733-E00398BC9D8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0038EA79-7CBF-4DBF-A3D5-D9D30BBE1181}"
-	ProjectSection(SolutionItems) = preProject
-		license.txt = license.txt
-		readme.md = readme.md
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -178,7 +178,7 @@ namespace CalbucciLib.ExtensionsGalore.Tests
 
             public override int GetHashCode()
             {
-                return a ^ s?.GetHashCode() ?? 0;
+                return HashCode.Combine(a, s ?? string.Empty);
             }
         }
 
@@ -256,7 +256,7 @@ namespace CalbucciLib.ExtensionsGalore.Tests
 
             public override int GetHashCode()
             {
-                return i ^ s?.GetHashCode() ?? 0;
+                return HashCode.Combine(i, s ?? string.Empty);
             }
         }
 
