@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
 	public static class IntExtensions
 	{

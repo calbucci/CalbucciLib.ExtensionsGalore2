@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
 
     public static class ColorExtensions

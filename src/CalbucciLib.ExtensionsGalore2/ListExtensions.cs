@@ -8,7 +8,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
 	public static class ListExtensions
 	{

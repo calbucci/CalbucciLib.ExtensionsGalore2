@@ -1,4 +1,4 @@
-# CalbucciLib.ExtensionsGalore 2
+# CalbucciLib.ExtensionsGalore2 2
 
 ExtensionsGalore is a library that extends many of the common types and classes of .NET to provide quick and easy access to common scenarios of web and mobile development. In other words, it helps you write fewer lines of code and focus more in the application.
 
@@ -16,7 +16,7 @@ This library is only available for .NET 6.0 or later.
 
 ## NuGet
 
-[https://www.nuget.org/packages/CalbucciLib.ExtensionsGalore/](https://www.nuget.org/packages/CalbucciLib.ExtensionsGalore2/)
+[https://www.nuget.org/packages/CalbucciLib.ExtensionsGalore2/](https://www.nuget.org/packages/CalbucciLib.ExtensionsGalore2/)
 
 
 

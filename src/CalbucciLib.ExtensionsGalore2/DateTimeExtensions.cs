@@ -5,9 +5,9 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using CalbucciLib.ExtensionsGalore;
+using CalbucciLib.ExtensionsGalore2;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
 	public enum DateTimeSignificance
 	{

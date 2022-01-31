@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CalbucciLib.ExtensionsGalore;
+using CalbucciLib.ExtensionsGalore2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace CalbucciLib.ExtensionsGalore.Tests
+namespace CalbucciLib.ExtensionsGalore2.Tests
 {
 	[TestClass()]
 	public class UIntExtensionsTests

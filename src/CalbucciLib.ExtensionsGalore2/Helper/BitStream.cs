@@ -1,4 +1,4 @@
-﻿namespace CalbucciLib.ExtensionsGalore.Helper
+﻿namespace CalbucciLib.ExtensionsGalore2.Helper
 {
     // https://github.com/renmengye/base62-csharp/
     public class BitStream : Stream

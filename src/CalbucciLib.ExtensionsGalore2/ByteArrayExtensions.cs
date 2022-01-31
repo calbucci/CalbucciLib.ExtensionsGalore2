@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using CalbucciLib.ExtensionsGalore.Helper;
+using CalbucciLib.ExtensionsGalore2.Helper;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
     public static class ByteArrayExtensions
     {

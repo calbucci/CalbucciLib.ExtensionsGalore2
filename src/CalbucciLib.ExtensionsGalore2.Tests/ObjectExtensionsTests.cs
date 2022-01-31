@@ -8,11 +8,11 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using CalbucciLib.ExtensionsGalore;
+using CalbucciLib.ExtensionsGalore2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace CalbucciLib.ExtensionsGalore.Tests
+namespace CalbucciLib.ExtensionsGalore2.Tests
 {
     [TestClass()]
     public class ObjectExtensionsTests

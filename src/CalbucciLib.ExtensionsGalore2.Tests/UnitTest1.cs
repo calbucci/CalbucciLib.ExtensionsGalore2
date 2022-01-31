@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CalbucciLib.ExtensionsGalore.Tests
+namespace CalbucciLib.ExtensionsGalore2.Tests
 {
     [TestClass]
     public class UnitTest1

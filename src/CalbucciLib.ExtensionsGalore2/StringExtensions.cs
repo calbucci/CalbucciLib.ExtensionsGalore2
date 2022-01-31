@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using System.Web;
 
-namespace CalbucciLib.ExtensionsGalore
+namespace CalbucciLib.ExtensionsGalore2
 {
     public static class StringExtensions
     {
