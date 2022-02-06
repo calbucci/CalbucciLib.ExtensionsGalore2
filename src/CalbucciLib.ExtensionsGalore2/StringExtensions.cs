@@ -698,6 +698,19 @@ namespace CalbucciLib.ExtensionsGalore2
             return str != null && str.Any(char.IsUpper);
         }
 
+        public static bool EqualsCaseInsentive(this string? str, string? other)
+        {
+            if (str == null)
+            {
+                if (other == null)
+                    return true;
+                return false;
+            }
+            else if (other == null)
+                return false;
+            return str.Equals(other, StringComparison.InvariantCultureIgnoreCase);
+        }
+
         public static bool EqualsAny(this string? str, IList<string?>? matchList,
             StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
         {
@@ -732,6 +745,13 @@ namespace CalbucciLib.ExtensionsGalore2
                 return false;
 
             return str.IndexOfAny(chars) >= 0;
+        }
+
+        public static bool StartsWithCaseInsensitive(this string? str, string? other)
+        {
+            if (str == null || other == null)
+                return false;
+            return str.StartsWith(other, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public static bool StartsWithAny(this string? str, IList<string?>? matchList,
@@ -809,6 +829,13 @@ namespace CalbucciLib.ExtensionsGalore2
             }
 
             return -1;
+        }
+
+        public static bool EndsWithCaseInsensitive(this string? str, string? other)
+        {
+            if (str == null || other == null)
+                return false;
+            return str.EndsWith(other, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public static bool EndsWithAny(this string? str, IList<string?>? matchList,
