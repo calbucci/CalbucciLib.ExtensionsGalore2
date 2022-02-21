@@ -143,6 +143,61 @@ namespace CalbucciLib.ExtensionsGalore2
 		//   Manipulation of content
 		//
 		// ====================================================================
+
+		/// <summary>
+		/// Add item to the list if it's not null. If item is a string, also check for empty string
+		/// </summary>
+		[return: NotNullIfNotNull("list")]
+		public static IList<T>? AddIfNotNull<T>(this IList<T>? list, T? item)
+        {
+			if (list == null)
+				return null;
+
+			// Special case for strings
+			if (typeof(T) == typeof(string))
+			{
+				if (!string.IsNullOrEmpty(item as string))
+					list.Add(item);
+			}
+			else
+			{
+				if (item != null)
+					list.Add(item);
+			}
+			return list;
+        }
+
+		/// <summary>
+		/// Add item to the list if it's not null. If item is a string, also check for empty string
+		/// </summary>
+		[return: NotNullIfNotNull("list")]
+		public static IList<T>? AddRangeIfNotNull<T>(this IList<T>? list, IEnumerable<T?> items)
+		{
+			if (list == null)
+				return null;
+
+			// Special case for strings
+			if (typeof(T) == typeof(string))
+			{
+				foreach (var item in items)
+				{
+					if (!string.IsNullOrEmpty(item as string))
+						list.Add(item);
+				}
+			}
+			else
+			{
+				foreach (var item in items)
+				{
+					if (item != null)
+						list.Add(item);
+				}
+			}
+			return list;
+		}
+
+
+
 		[return: NotNullIfNotNull("list")]
 		public static List<T> Randomize<T>(this IList<T>? list, int seed = -1)
 		{

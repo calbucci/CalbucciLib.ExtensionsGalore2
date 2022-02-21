@@ -1351,7 +1351,6 @@ namespace CalbucciLib.ExtensionsGalore2
             if (string.IsNullOrEmpty(str))
                 return str;
 
-            StringBuilder? sb = null;
             int i = str.IndexOfNonWhitespace();
             var c = str[i];
             if (!char.IsLetterOrDigit(c))
@@ -1360,7 +1359,7 @@ namespace CalbucciLib.ExtensionsGalore2
             if (char.IsUpper(c) || !char.IsLetter(c))
                 return str; // first is upper or a digit
 
-            sb = new StringBuilder(str.Length);
+            var sb = new StringBuilder(str.Length);
             if (i > 0)
                 sb.Append(str, 0, i);
             sb.Append(char.ToUpper(c));
@@ -1622,6 +1621,8 @@ namespace CalbucciLib.ExtensionsGalore2
                 case "yes":
                 case "yay":
                 case "yey":
+                case "https://schema.org/true":
+                case "http://schema.org/true":
                     return true;
             }
             return false;
